@@ -1,0 +1,132 @@
+<main class="container page-shell">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-7 form-shell">
+
+      <div class="card">
+
+        <div class="card-body">
+
+          <p class="eyebrow">Admin tools</p>
+          <h2>Add new event</h2>
+          <p class="text-secondary">Share an event with your campus community.</p>
+
+          <hr>
+
+          <form (ngSubmit)="addEvent()">
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Event Title
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="event.title"
+                name="title"
+                required>
+
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Description
+              </label>
+
+              <textarea
+                class="form-control"
+                rows="4"
+                [(ngModel)]="event.description"
+                name="description"
+                required>
+              </textarea>
+
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Date
+              </label>
+
+              <input
+                type="date"
+                class="form-control"
+                [(ngModel)]="event.date"
+                name="date"
+                required>
+
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Location
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="event.location"
+                name="location"
+                required>
+
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Category
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="event.category"
+                name="category"
+                required>
+
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Organizer
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="event.organizer"
+                name="organizer"
+                required>
+
+            </div>
+
+            <button
+              class="btn btn-success me-2">
+              Add Event
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="router.navigate(['/admin'])">
+              Cancel
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>

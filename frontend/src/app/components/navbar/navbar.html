@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark app-nav">
+
+  <div class="container">
+
+    <a class="navbar-brand" routerLink="/">
+      <span class="brand-mark">✦</span>
+      Campus Connect
+    </a>
+
+    <div class="nav-actions">
+
+      <a
+        class="btn btn-outline-light me-2"
+        routerLink="/events">
+        Events
+      </a>
+
+      @if (auth.isLoggedIn() && !auth.isAdmin()) {
+
+        <a
+          class="btn btn-outline-light me-2"
+          routerLink="/student">
+          Dashboard
+        </a>
+
+        <a
+          class="btn btn-outline-light me-2"
+          routerLink="/my-events">
+          My Events
+        </a>
+
+      }
+
+      @if (auth.isAdmin()) {
+
+        <a
+          class="btn btn-warning me-2"
+          routerLink="/admin">
+          Admin
+        </a>
+
+      }
+
+      @if (!auth.isLoggedIn()) {
+
+        <a
+          class="btn btn-success me-2"
+          routerLink="/login">
+          Login
+        </a>
+
+        <a
+          class="btn btn-primary"
+          routerLink="/register">
+          Register
+        </a>
+
+      }
+
+      @if (auth.isLoggedIn()) {
+
+        <button
+          class="btn btn-danger"
+          (click)="logout()">
+          Logout
+        </button>
+
+      }
+
+    </div>
+
+  </div>
+
+</nav>

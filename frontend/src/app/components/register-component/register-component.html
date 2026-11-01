@@ -1,0 +1,110 @@
+<main class="container auth-wrap">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-5">
+
+      <div class="card auth-card">
+
+        <div class="card-body">
+
+          <p class="eyebrow">Join the community</p>
+          <h2 class="auth-title">Create your account</h2>
+          <p class="auth-subtitle">One account for every campus experience.</p>
+
+          <form (ngSubmit)="register()">
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Name
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="name"
+                name="name"
+                required>
+
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label">Student ID</label>
+
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="studentId"
+                name="studentId"
+                required>
+
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label">Department</label>
+
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="department"
+                name="department"
+                required>
+
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Email
+              </label>
+
+              <input
+                type="email"
+                class="form-control"
+                [(ngModel)]="email"
+                name="email"
+                required>
+
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Password
+              </label>
+
+              <input
+                type="password"
+                class="form-control"
+                [(ngModel)]="password"
+                name="password"
+                minlength="8"
+                required>
+
+            </div>
+
+            <button class="btn btn-primary w-100 mt-2">
+              Create student account
+            </button>
+
+          </form>
+
+          <p class="auth-footer">
+            Already have an account?
+            <a routerLink="/login">
+              Login
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>

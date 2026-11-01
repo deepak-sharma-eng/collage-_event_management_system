@@ -1,0 +1,62 @@
+<main class="container page-shell">
+
+  <div class="section-heading">
+    <p class="eyebrow">Discover your campus</p>
+    <h2>Upcoming events</h2>
+    <p>Find experiences, people and moments worth showing up for.</p>
+  </div>
+
+  <div class="row">
+
+    @for (event of events; track event._id) {
+
+      <div class="col-md-4 mb-4">
+
+        <div class="card event-card">
+
+          <div class="card-body">
+
+            <span class="event-category">{{ event.category }}</span>
+
+            <h4 class="card-title">
+              {{ event.title }}
+            </h4>
+
+            <p class="event-description">
+              {{ event.description }}
+            </p>
+
+            <div class="event-meta">
+              <span>◷ {{ event.date | date:'mediumDate' }}</span>
+              <span>⌖ {{ event.location }}</span>
+            </div>
+
+            <div class="mt-3">
+
+              <a
+                class="btn btn-primary w-100"
+                [routerLink]="['/events', event._id]">
+                View Details
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+  @if (events.length === 0) {
+
+    <div class="alert alert-info">
+      No events available.
+    </div>
+
+  }
+
+</main>

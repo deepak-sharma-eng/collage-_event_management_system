@@ -1,0 +1,40 @@
+<main class="container page-shell">
+
+  <div class="section-heading">
+    <p class="eyebrow">Your schedule</p>
+    <h2>My registered events</h2>
+    <p>Everything you have planned, in one place.</p>
+  </div>
+
+  <div class="row mt-4">
+
+    @for (registration of registrations; track registration._id) {
+
+      <div class="col-md-6 mb-3">
+
+        <div class="card event-card">
+
+          <div class="card-body">
+
+            <h4>
+              {{ registration.event.title }}
+            </h4>
+
+            <div class="event-meta">
+              <span>◷ {{ registration.event.date | date:'mediumDate' }}</span>
+              <span>⌖ {{ registration.event.location }}</span>
+            </div>
+
+            <span class="event-category mt-3 mb-0 text-success bg-success-subtle">Registered</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+</main>

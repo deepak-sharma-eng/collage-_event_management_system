@@ -1,0 +1,51 @@
+<main class="container page-shell">
+
+  @if (event) {
+
+    <div class="card">
+
+      <div class="card-body p-4 p-md-5">
+
+        <span class="event-category">{{ event.category }}</span>
+
+        <h1>
+          {{ event.title }}
+        </h1>
+
+        <hr>
+
+        <p class="lead text-secondary my-4">
+          {{ event.description }}
+        </p>
+
+        <div class="event-meta mb-4">
+          <span>◷ {{ event.date | date:'fullDate' }}</span>
+          <span>⌖ {{ event.location }}</span>
+          <span>✦ Hosted by {{ event.organizer }}</span>
+        </div>
+
+        @if (auth.isLoggedIn() && !auth.isAdmin()) {
+
+          <button
+            class="btn btn-success"
+            (click)="register()">
+            Register for Event
+          </button>
+
+        }
+
+        @if (!auth.isLoggedIn()) {
+
+          <p class="text-muted">
+            Please login to register for this event.
+          </p>
+
+        }
+
+      </div>
+
+    </div>
+
+  }
+
+</main>

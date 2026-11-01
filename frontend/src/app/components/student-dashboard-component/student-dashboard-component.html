@@ -1,0 +1,33 @@
+<main class="container page-shell">
+
+  <div class="dashboard-hero mb-4">
+    <p class="eyebrow text-white-50">Student space</p>
+    <h2>Welcome, {{ user?.name }}</h2>
+    <p>Student ID: {{ user?.studentId }} &middot; Department: {{ user?.department }}</p>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card dashboard-card">
+        <div class="card-body">
+          <div class="dashboard-icon">✦</div>
+          <h4 class="card-title">Browse events</h4>
+          <p class="card-text text-secondary">Explore upcoming college events and register to attend.</p>
+          <a class="btn btn-primary" routerLink="/events">View events</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card dashboard-card">
+        <div class="card-body">
+          <div class="dashboard-icon">✓</div>
+          <h4 class="card-title">My registrations</h4>
+          <p class="card-text text-secondary">You are registered for {{ registrationCount }} event(s).</p>
+          <a class="btn btn-outline-primary" routerLink="/my-events">View my events</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
